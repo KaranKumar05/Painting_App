@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+    background-color: rgb(0, 0, 155);
+}
+/* Mian Container  */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+/* Container> Toolbar  */
+.container .tool_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 155);
+  padding: 10px;
+}
+
+/* Tool bar buttons Div  */
+.tool_bar > div:nth-child(1) {
+  display: flex;
+  column-gap: 2em;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+}
+.tool_bar > div:nth-child(1) button {
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold ;
+  font-family: 'Rubik', sans-serif;
+  color: white;
+  border-radius: 10px;
+  background-color: rgb(0, 42, 255);
+  cursor: pointer;
+  transition: .3s;
+}
+.tool_bar > div:nth-child(1)>button:nth-child(2) {
+    background-color: red;
+}
+/* Button Hover Effect */
+.tool_bar > div:nth-child(1)>button:nth-child(1):hover {
+    box-shadow: 2px 2px 5px rgb(0, 42, 255);
+}
+.tool_bar > div:nth-child(1)>button:nth-child(2):hover {
+    box-shadow: 2px 2px 5px red;
+}
+
+/* Color Section  */
+.default-colors {
+  display: flex;
+  column-gap: 1em;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+/* Color Section CSS for all div  */
+.default-colors div {
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  border: 2px solid white;
+}
+.default-colors label{
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+}
+/* Targeting Each div in Default Colors Div  */
+.default-colors>div:nth-child(1){
+    background-color: red;
+}
+.default-colors>div:nth-child(2){
+    background-color: blue;
+}
+.default-colors>div:nth-child(3){
+    background-color: yellow;
+}
+.default-colors>div:nth-child(4){
+    background-color: green;
+}
+.default-colors>div:nth-child(5){
+    background-color: brown;
+}
+/* Default Color input styling */
+.default-colors input{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}
+
+/* Pen Thickness Styling */
+/* 3rd div in Tool div */
+.tool_bar > div:nth-child(3) {
+  display: flex;
+  column-gap: 1em;
+  /* border: 2px solid black; */
+  padding: 27px;
+  background-color: white;
+  border-radius: 10px;
+}
+/* lable of pen thickness */
+.tool_bar > div:nth-child(3) label {
+    font-size: 1em;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+}
+/* input of pen thickness */
+.tool_bar > div:nth-child(3) input {
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Canvas Styling  */
+.container #canvas {
+  background-color: white;
+  height: 80vh;
+  border-radius: 30px;
+}
