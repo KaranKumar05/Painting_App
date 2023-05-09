@@ -15,9 +15,6 @@ let initial_color = "black";
 function change_color(element) {
     initial_color = element.style.background;
 }
-// function colorPicker() {
-//     initial_color = this.value;
-// }
 
 // initial thickenss of pen
 let initial_width = "2";
@@ -34,17 +31,11 @@ let drawing = false;
 // Undo Button Parameters
 let undo_array = [];
 let index = -1;
-
-// touch function for Touch screen devices
-canvas.addEventListener("touchstart", start, false);
-canvas.addEventListener("touchmove", draw, false);
-
 // mouse function for computer
 canvas.addEventListener("mousedown", start, false);
 canvas.addEventListener("mousemove", draw, false);
 
 // To stop the Drawing When click is relesed 
-canvas.addEventListener("touchend", stop, false);
 canvas.addEventListener("mouseup", stop, false);
 canvas.addEventListener("mouseout", stop, false);
 
@@ -93,12 +84,57 @@ function clear_canvas() {
 
 // Undo buttons js 
 function undo_last() {
-    if(index <= 0){
+    if (index <= 0) {
         clear_canvas();
-    }else {
+    } else {
         index -= 1;
         undo_array.pop();
         context.putImageData(undo_array[index], 0, 0)
     }
+    
 
+}
+// touch function for Touch screen devices
+canvas.addEventListener("touchstart", start_touch, false);
+canvas.addEventListener("touchmove", draw_touch, false);
+canvas.addEventListener("touchend", stop, false);
+
+
+function start_touch(event) {
+    drawing = true;
+    var touch = event.touches[0];
+    context.beginPath();
+    context.moveTo(touch.pageX - canvas.offsetLeft, touch.pageY - canvas.offsetTop)
+    event.preventDefault();
+}
+
+function draw_touch(event) {
+    if (drawing) {
+        var touch = event.touches[0];
+        context.lineTo(touch.pageX - canvas.offsetLeft, touch.pageY - canvas.offsetTop)
+        context.strokeStyle = initial_color;
+        context.lineWidth = initial_width;
+        context.lineCap = "Round";
+        context.lineJoin = "Round";
+        context.stroke();
+    }
+    event.preventDefault();
+}
+
+// To stop the Drawing When click is relesed 
+canvas.addEventListener("touchend", stop, false);
+
+function stop(event) {
+    if (drawing) {
+        context.stroke();
+        context.closePath();
+        drawing = false;
+    }
+    event.preventDefault();
+
+    // undo button for touch devices 
+    if (event.type != 'mouseout') {
+        undo_array.push(context.getImageData(0, 0, canvas.width, canvas.height));
+        index += 1;
+    }
 }
