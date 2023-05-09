@@ -8,6 +8,7 @@
     <title>Painting App</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/qurey.css">
 </head>
 
 <body>
@@ -28,7 +29,18 @@
             </div>
             <div>
                 <label for="thickness">Thickness</label>
-                <input type="range" name="thickness" id="thickness" min="1" max="100" />
+                <select id="thickness">
+                    <option value="option1">5</option>
+                    <option value="option2">7</option>
+                    <option value="option3">13</option>
+                    <option value="option4">18</option>
+                    <option value="option5">23</option>
+                    <option value="option6">32</option>
+                    <option value="option7">42</option>
+                    <option value="option8">54</option>
+                    <option value="option9">64</option>
+                    <option value="option10">72</option>
+                  </select>
             </div>
         </div>
         <canvas id="canvas"></canvas>

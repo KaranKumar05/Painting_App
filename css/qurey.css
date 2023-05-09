@@ -1,0 +1,134 @@
+@media (max-width: 1024px) {
+  /* Buttons  */
+  .tool_bar > div:nth-child(1) {
+    column-gap: 1em;
+    padding: 15px;
+  }
+  .tool_bar > div:nth-child(1) button {
+    padding: 5px 10px;
+  }
+
+  /* Color Section  */
+  .default-colors {
+    column-gap: 0.6em;
+    padding: 10px;
+  }
+
+  /* Pen Thickness Styling */
+  /* 3rd div in Tool div */
+  .tool_bar > div:nth-child(3) {
+    padding: 20px 15px;
+  }
+  /* input of pen thickness */
+  .tool_bar > div:nth-child(3) select {
+    padding: 2px;
+  }
+}
+@media (max-width: 814px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+  }
+  .container .tool_bar {
+    flex-direction: column-reverse;
+    row-gap: 1em;
+  }
+  .tool_bar > div:nth-child(1) {
+    flex-direction: column;
+    row-gap: 0.7em;
+  }
+  .default-colors {
+    flex-direction: column;
+  }
+  .tool_bar > div:nth-child(3) {
+    column-gap: 0.3em;
+    padding: 15px;
+    align-items: center;
+  }
+  .tool_bar > div:nth-child(3) label {
+    font-size: 0.7em;
+  }
+
+  .container #canvas {
+    height: 90vh;
+    width: 75%;
+  }
+}
+@media (max-width: 720px) {
+  .default-colors {
+    align-items: flex-start;
+  }
+  .default-colors label {
+    font-size: 0.8em;
+  }
+  .container .tool_bar {
+    align-items: flex-start;
+  }
+  .tool_bar > div:nth-child(3) {
+    flex-direction: column;
+    column-gap: 0.6em;
+    padding: 15px;
+  }
+  .tool_bar > div:nth-child(3) label {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 512px) {
+  .container {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .container .tool_bar {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .tool_bar > div:nth-child(1) {
+    /* flex-direction: row  ; */
+    row-gap: 0.2em;
+    padding: 10px;
+  }
+  .tool_bar > div:nth-child(1) button {
+    padding: 5px 10px;
+    font-size: 0.7em;
+  }
+  .default-colors {
+    flex-direction: row;
+    column-gap: 0;
+    align-items: center;
+  }
+  .default-colors div {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+  }
+  .default-colors label {
+    display: none;
+  }
+  .default-colors input {
+    width: 30px;
+    height: 30px;
+  }
+  .tool_bar > div:nth-child(3) {
+    padding: 10px;
+  }
+  .container #canvas {
+    height: 75vh;
+    width: 95%;
+  }
+}
+@media (max-width: 444px) {
+  .container {
+    height: 100%;
+  }
+  .default-colors > div:nth-child(5) {
+    display: none;
+  }
+}
+@media (max-width: 397px) {
+  .default-colors > div:nth-child(4) {
+    display: none;
+  }
+}
