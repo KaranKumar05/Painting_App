@@ -73,22 +73,6 @@ body {
   font-weight: bold;
   font-family: "Rubik", sans-serif;
 }
-/* Targeting Each div in Default Colors Div  */
-.default-colors > div:nth-child(1) {
-  background-color: red;
-}
-.default-colors > div:nth-child(2) {
-  background-color: blue;
-}
-.default-colors > div:nth-child(3) {
-  background-color: yellow;
-}
-.default-colors > div:nth-child(4) {
-  background-color: green;
-}
-.default-colors > div:nth-child(5) {
-  background-color: brown;
-}
 /* Default Color input styling */
 .default-colors input {
   height: 40px;

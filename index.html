@@ -20,11 +20,11 @@
                 <button onclick="clear_canvas()" class="btn">CLEAR</button>
             </div>
             <div class="default-colors">
-                <div onclick="change_color(element)" class="default_color"></div>
-                <div onclick="change_color(element)" class="default_color"></div>
-                <div onclick="change_color(element)" class="default_color"></div>
-                <div onclick="change_color(element)" class="default_color"></div>
-                <div onclick="change_color(element)" class="default_color"></div>
+                <div onclick="change_color(this)" style="background: red"></div>
+                <div onclick="change_color(this)" style="background: blue"></div>
+                <div onclick="change_color(this)" style="background: yellow"></div>
+                <div onclick="change_color(this)" style="background: green"></div>
+                <div onclick="change_color(this)" style="background: brown"></div>
                 <label for="color_picker">Color Picker</label>
                 <input oninput="initial_color = this.value" type="color" name="color_picker" id="color_picker" />
             </div>

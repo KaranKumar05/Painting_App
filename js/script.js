@@ -15,6 +15,9 @@ let initial_color = "black";
 function change_color(element) {
     initial_color = element.style.background;
 }
+// function colorPicker() {
+//     initial_color = this.value;
+// }
 
 // initial thickenss of pen
 let initial_width = "2";
@@ -32,7 +35,7 @@ let drawing = false;
 let undo_array = [];
 let index = -1;
 
-// touch function foe moblie and tablets
+// touch function for Touch screen devices
 canvas.addEventListener("touchstart", start, false);
 canvas.addEventListener("touchmove", draw, false);
 
