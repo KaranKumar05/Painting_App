@@ -6,45 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Painting App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="./icon/fav-icon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/qurey.css">
+    <link rel="stylesheet" href="./css/qurey.css" />
 </head>
 
 <body>
     <div class="container">
         <div class="tool_bar">
             <div>
-                <button class="btn">UNDO</button>
-                <button class="btn">CLEAR</button>
+                <button onclick="undo_last()" class="btn">UNDO</button>
+                <button onclick="clear_canvas()" class="btn">CLEAR</button>
             </div>
             <div class="default-colors">
-                <div class="default_color"></div>
-                <div class="default_color"></div>
-                <div class="default_color"></div>
-                <div class="default_color"></div>
-                <div class="default_color"></div>
+                <div onclick="change_color(element)" class="default_color"></div>
+                <div onclick="change_color(element)" class="default_color"></div>
+                <div onclick="change_color(element)" class="default_color"></div>
+                <div onclick="change_color(element)" class="default_color"></div>
+                <div onclick="change_color(element)" class="default_color"></div>
                 <label for="color_picker">Color Picker</label>
-                <input type="color" name="color_picker" id="color_picker" />
+                <input oninput="initial_color = this.value" type="color" name="color_picker" id="color_picker" />
             </div>
             <div>
                 <label for="thickness">Thickness</label>
                 <select id="thickness">
-                    <option value="option1">5</option>
-                    <option value="option2">7</option>
-                    <option value="option3">13</option>
-                    <option value="option4">18</option>
-                    <option value="option5">23</option>
-                    <option value="option6">32</option>
-                    <option value="option7">42</option>
-                    <option value="option8">54</option>
-                    <option value="option9">64</option>
-                    <option value="option10">72</option>
-                  </select>
+                    <option>2</option>
+                    <option>7</option>
+                    <option>13</option>
+                    <option>18</option>
+                    <option>23</option>
+                    <option>32</option>
+                    <option>42</option>
+                    <option>54</option>
+                    <option>64</option>
+                    <option>72</option>
+                </select>
             </div>
         </div>
         <canvas id="canvas"></canvas>
     </div>
+
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

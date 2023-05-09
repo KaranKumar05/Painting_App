@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="thickness">
+        <option></option>
+        <option >5</option>
+        <option >7</option>
+        <option >13</option>
+        <option >18</option>
+        <option >23</option>
+        <option >32</option>
+        <option >42</option>
+        <option >54</option>
+        <option >64</option>
+        <option >72</option>
+    </select>
+
+    <script>
+        let thickness = document.querySelector("#thickness");
+        thickness.addEventListener("change", function() {
+            alert(thickness.value);
+        });
+    </script>
+</body>
+</html>
