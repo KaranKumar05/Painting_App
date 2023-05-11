@@ -138,3 +138,18 @@ function stop(event) {
         index += 1;
     }
 }
+
+// Save Btn 
+let saveBtn = document.querySelector('#saveBtn');
+
+saveBtn.addEventListener('click', function() {
+  let imageData = canvas.toDataURL('image/png');
+  let downloadLink = document.createElement('a');
+  downloadLink.href = imageData;
+  downloadLink.download = 'my-painting.png';
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+});
+
+  

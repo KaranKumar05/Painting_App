@@ -23,6 +23,11 @@
   .tool_bar > div:nth-child(3) select {
     padding: 2px;
   }
+  /* save btn  */
+.container #saveBtn{
+  font-size: 1em;
+}
+
 }
 @media (max-width: 814px) {
   .container {
@@ -67,8 +72,9 @@
     align-items: flex-start;
   }
   .tool_bar > div:nth-child(3) {
-    flex-direction: column;
-    column-gap: 0.6em;
+    flex-direction: column-reverse;
+    /* column-gap: 0.6em; */
+    row-gap: .5em;
     padding: 15px;
   }
   .tool_bar > div:nth-child(3) label {
@@ -126,6 +132,11 @@
   .default-colors > div:nth-child(5) {
     display: none;
   }
+.container #saveBtn{
+  font-size: .9em;
+  padding: 4px 8px;
+}
+  
 }
 @media (max-width: 397px) {
   .default-colors > div:nth-child(4) {

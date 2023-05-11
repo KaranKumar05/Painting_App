@@ -121,3 +121,21 @@ body {
   border-radius: 30px;
   cursor: crosshair;
 }
+.container #saveBtn{
+  display: flex;
+  column-gap: 10px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  text-align: end;
+  align-self: flex-end;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 1.3em;
+  border: none;
+  font-weight: bold;
+  transition: .4s;
+}
+.container #saveBtn:hover{
+  background-color: rgb(6, 255, 6);
+}
