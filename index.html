@@ -24,6 +24,13 @@
         <div>
           <button onclick="undo_last()" class="btn">UNDO</button>
           <button onclick="clear_canvas()" class="btn">CLEAR</button>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round">
+              <i class="bi bi-moon"></i>
+              <i class="bi bi-sun"></i>
+            </span>
+          </label>
         </div>
         <div class="default-colors">
           <div onclick="change_color(this)" style="background: red"></div>
@@ -53,10 +60,12 @@
             <option>64</option>
             <option>72</option>
           </select>
-          <button id="saveBtn">Save<i class="bi bi-download"></i></button>
+          <button id="saveBtn"><span>Save</span><i class="bi bi-download"></i></button>
         </div>
       </div>
+      <div>
         <canvas id="canvas"></canvas>
+      </div>
     </div>
 
     <script src="./js/script.js"></script>

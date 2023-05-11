@@ -4,20 +4,22 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(0, 0, 155);
+  background-color:  #e0dddd;
 }
 /* Mian Container  */
 .container {
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
+  /* row-gap: 1em; */
+  /* padding: 0 20px; */
 }
 /* Container> Toolbar  */
 .container .tool_bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(0, 0, 155);
+  background: linear-gradient(to bottom, #626262, #e0dddd);
+
   padding: 10px;
 }
 
@@ -25,40 +27,122 @@ body {
 .tool_bar > div:nth-child(1) {
   display: flex;
   column-gap: 2em;
+  padding: 10px;
   border-radius: 10px;
-  padding: 20px;
-  background-color: white;
+  /* padding: 20px; */
+  /* background-color: white; */
 }
 .tool_bar > div:nth-child(1) button {
-  padding: 10px 20px;
+  padding: 5px 20px;
   border: none;
   font-weight: bold;
   font-family: "Rubik", sans-serif;
   color: white;
-  border-radius: 10px;
-  background-color: rgb(0, 42, 255);
+  border-radius: 5px;
+  background-color: rgb(9, 29, 129);
   cursor: pointer;
   transition: 0.3s;
 }
 .tool_bar > div:nth-child(1) > button:nth-child(2) {
-  background-color: red;
+  background-color: rgb(13, 131, 152);
 }
 /* Button Hover Effect */
 .tool_bar > div:nth-child(1) > button:nth-child(1):hover {
-  box-shadow: 2px 2px 5px rgb(0, 42, 255);
+  box-shadow: 2px 2px 5px rgb(255, 255, 255);
 }
 .tool_bar > div:nth-child(1) > button:nth-child(2):hover {
-  box-shadow: 2px 2px 5px red;
+  box-shadow: 2px 2px 5px rgb(253, 255, 255);
+}
+/* dark mode button  */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
 }
 
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d8d8d8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  /* background-color: #000000; */
+  background-color: #262626;
+
+}
+
+input:focus + .slider {
+  /* box-shadow: 0 0 1px #000000; */
+  background-color: #d8d8d8;
+
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 14px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Adjust the position of the icons within the slider */
+.slider i {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Adjust the position of the moon icon */
+.slider i.bi-moon {
+  left: 25%;
+  color: white;
+}
+
+/* Adjust the position of the sun icon */
+.slider i.bi-sun {
+    color: white;
+  right: 0%;
+}
 /* Color Section  */
 .default-colors {
   display: flex;
   column-gap: 1em;
   align-items: center;
   padding: 20px;
-  background-color: white;
-  border-radius: 10px;
+  /* background-color: white; */
+  /* border-radius: 10px; */
+  /* border: 0 2px 0 2px solid white; */
+  /* border-left: 2px solid white; */
 }
 /* Color Section CSS for all div  */
 .default-colors div {
@@ -70,8 +154,9 @@ body {
   border: 2px solid white;
 }
 .default-colors label {
-  font-weight: bold;
+  /* font-weight: bold; */
   font-family: "Rubik", sans-serif;
+  color: white;
 }
 /* Default Color input styling */
 .default-colors input {
@@ -80,7 +165,7 @@ body {
   cursor: pointer;
   border: none;
   color: orchid;
-  background-color: white;
+  /* background-color: white; */
 }
 
 /* Pen Thickness Styling */
@@ -89,15 +174,9 @@ body {
   display: flex;
   column-gap: 1em;
   /* border: 2px solid black; */
-  padding: 27px;
-  background-color: white;
+  padding: 10px;
+  /* background-color: white; */
   border-radius: 10px;
-}
-/* lable of pen thickness */
-.tool_bar > div:nth-child(3) label {
-  font-size: 1em;
-  font-family: "Rubik", sans-serif;
-  font-weight: bold;
 }
 /* input of pen thickness */
 .tool_bar > div:nth-child(3) select {
@@ -106,6 +185,8 @@ body {
   font-weight: bold;
   border-radius: 20px;
   transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.46);
+  color: white;
 }
 .tool_bar > div:nth-child(3) select option {
   cursor: pointer;
@@ -115,27 +196,33 @@ body {
 }
 
 /* Canvas Styling  */
-.container #canvas {
-  background-color: white;
-  height: 80vh;
-  border-radius: 30px;
-  cursor: crosshair;
+.container > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
 }
-.container #saveBtn{
+.container #canvas {
+  background-color: rgb(0, 0, 0);
+  height: 97%;
+  width: 97%;
+  /* border-radius: 30px; */
+  cursor: crosshair;
+  z-index: 2;
+}
+.container #saveBtn {
   display: flex;
   column-gap: 10px;
   cursor: pointer;
-  background-color: red;
+  background-color: rgb(3, 143, 42);
   color: white;
   text-align: end;
   align-self: flex-end;
   padding: 5px 10px;
   border-radius: 10px;
-  font-size: 1.3em;
-  border: none;
+  font-size: 1.1em;
+ border: none;
   font-weight: bold;
-  transition: .4s;
+  transition: 0.3s;
 }
-.container #saveBtn:hover{
+.container #saveBtn:hover {
   background-color: rgb(6, 255, 6);
 }

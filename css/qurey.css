@@ -23,13 +23,18 @@
   .tool_bar > div:nth-child(3) select {
     padding: 2px;
   }
-  /* save btn  */
-.container #saveBtn{
-  font-size: 1em;
-}
 
+  .container #canvas {
+    height: 23.5em;
+  }
+
+  /* save btn  */
+
+  .container #saveBtn {
+    font-size: 1em;
+  }
 }
-@media (max-width: 814px) {
+@media (max-width: 836px) {
   .container {
     flex-direction: row;
     align-items: center;
@@ -57,8 +62,8 @@
   }
 
   .container #canvas {
-    height: 90vh;
-    width: 75%;
+    height: 28em;
+    width: 95%;
   }
 }
 @media (max-width: 720px) {
@@ -70,11 +75,12 @@
   }
   .container .tool_bar {
     align-items: flex-start;
+    row-gap: 0;
   }
   .tool_bar > div:nth-child(3) {
     flex-direction: column-reverse;
     /* column-gap: 0.6em; */
-    row-gap: .5em;
+    row-gap: 0.5em;
     padding: 15px;
   }
   .tool_bar > div:nth-child(3) label {
@@ -85,61 +91,121 @@
   .container {
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: normal;
   }
   .container .tool_bar {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    margin-top: -15px;
+    padding: 0;
+  }
+  .switch {
+    width: 45px;
+    height: 25px;
+  }
+  .slider:before {
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /* Adjust the position of the sun icon */
+  .slider i.bi-sun {
+    right: -10%;
   }
   .tool_bar > div:nth-child(1) {
-    /* flex-direction: row  ; */
+    flex-direction: row;
     row-gap: 0.2em;
     padding: 10px;
   }
   .tool_bar > div:nth-child(1) button {
-    padding: 5px 10px;
-    font-size: 0.7em;
+    padding: 3px 6px;
+    font-size: 0.6em;
   }
   .default-colors {
     flex-direction: row;
-    column-gap: 0;
+    column-gap: 5px;
     align-items: center;
   }
   .default-colors div {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 30px;
   }
   .default-colors label {
     display: none;
   }
   .default-colors input {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
   .tool_bar > div:nth-child(3) {
+    flex-direction: row;
     padding: 10px;
   }
   .container #canvas {
-    height: 75vh;
-    width: 95%;
+    height: 25em;
+    width: 97%;
   }
-}
-@media (max-width: 444px) {
-  .container {
-    height: 100%;
+  #saveBtn > span {
+    display: none;
   }
   .default-colors > div:nth-child(5) {
     display: none;
   }
-.container #saveBtn{
-  font-size: .9em;
-  padding: 4px 8px;
 }
-  
-}
-@media (max-width: 397px) {
+@media (max-width: 444px) {
+ 
   .default-colors > div:nth-child(4) {
     display: none;
   }
+  .container #saveBtn {
+    font-size: 0.9em;
+    padding: 4px 8px;
+  }
+  .switch {
+    width: 40px;
+    height: 20px;
+  }
+  .slider:before {
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 2px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /* Adjust the position of the sun icon */
+  .slider i.bi-sun {
+    right: -10%;
+    font-size: 14px;
+  }
+  .slider i.bi-moon {
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 397px) {
+.tool_bar > div:nth-child(1) {
+  column-gap: 5px;
+
+}
+
+  .default-colors > div:nth-child(3) {
+    display: none;
+  }
+
 }
