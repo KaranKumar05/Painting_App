@@ -89,6 +89,11 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease-out;
 }
+.dropdown-menu-2>div {
+  display: flex;
+  column-gap: 5px;
+}
+
 .dropdown-menu-2 button{
     padding: 5px 10px;
     border: none;
@@ -97,7 +102,7 @@ body {
     border-bottom: 2px solid black;
 }
 .dropdown-menu-2 button:hover{
- background-color: black;
+ background-color: rgb(255, 255, 255);
 }
 .dropdown-menu-2.show {
   display: flex;
@@ -114,7 +119,18 @@ body {
   align-items: center;
   column-gap: 20px;
 }
-.brush {
+#brush {
+  height: 35px;
+  width: 35px;
+  background-color: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+#eraser {
   height: 35px;
   width: 35px;
   background-color: white;
@@ -140,13 +156,6 @@ body {
   padding: 10px;
   text-align: center;
   font-size: 1.3em;
-}
-.container > div:nth-child(3) #textarea {
-  color: rgb(0, 0, 0);
-  border: 2px dotted rgb(0, 0, 0);
-  padding: 5px 10px;
-  cursor: pointer;
-  background-color: white;
 }
 
 /* Colors Section  */
@@ -267,8 +276,13 @@ input:checked + .slider:before {
 }
 /* canvas Styling  */
 #canvas{
-  height: 80%;
+  height: 83%;
   background-color: white;
   width: 98%;
   align-self: center;
+}
+/* active class  */
+.active{
+  background-color: #757575 !important; 
+  color: white;
 }

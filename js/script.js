@@ -91,7 +91,6 @@ function undo_last() {
         undo_array.pop();
         context.putImageData(undo_array[index], 0, 0)
     }
-    
 
 }
 // touch function for Touch screen devices
