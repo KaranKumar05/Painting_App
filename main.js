@@ -187,21 +187,4 @@ toolBtn.forEach(btn => {
   })
 });
 
-const letDrawing = (e) => {
-  if (!drawing) return;
-
-  if (seletedTool === "brush") {
-    ctx.lineTo(e.offsetX, e.offsetY)
-    ctx.stroke()
-  }else if(seletedTool === "rectangle"){
-    drawRect(e);
-  }else if(seletedTool === "brush"){
-
-  }else if(seletedTool === "brush"){
-
-  }else if(seletedTool === "brush"){
-
-  }else if(seletedTool === "brush"){
-}
-}
 
