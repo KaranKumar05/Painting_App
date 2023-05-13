@@ -1,0 +1,223 @@
+@media (max-width: 1024px) {
+  .container {
+    justify-content: space-between;
+    padding: 10px;
+  }
+}
+@media (max-width: 958px) {
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-toggle {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 10em;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .dropdown-menu.show {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.7em;
+    opacity: 1;
+    width: 8.32em;
+    align-items: center;
+  }
+  .dropdown button:nth-child(1) {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+  .dropdown button:nth-child(1):hover {
+    background-color: white;
+    color: black;
+    box-shadow: none;
+  }
+  .dropdown-menu button:nth-child(1) {
+    background-color: rgb(149, 1, 1);
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+  }
+  .dropdown-menu button:nth-child(1):hover {
+    background-color: rgb(223, 3, 3);
+    box-shadow: 0px 0px 20px white;
+  }
+}
+@media (max-width: 838px) {
+  .container {
+    padding: 10px 5px;
+  }
+  .dropdown-toggle {
+    width: 7em;
+  }
+  .dropdown-menu.show {
+    width: 5.83em;
+  }
+  .dropdown-toggle-2 {
+    width: 7em;
+  }
+  .dropdown-menu-2.show {
+    width: 5.83em;
+  }
+}
+@media (max-width: 760px) {
+  .container > div:nth-child(3) {
+    column-gap: 10px;
+  }
+  .container > div:nth-child(3) select {
+    font-size: 1em;
+    padding: 4px 2px;
+  }
+  .container > div:nth-child(3) #textarea {
+    padding: 2px 6px;
+  }
+  .dropdown-toggle {
+    width: 5em;
+  }
+  .dropdown-menu.show {
+    width: 4.2em;
+  }
+  .dropdown-toggle-2 {
+    width: 5em;
+  }
+  .dropdown-menu-2.show {
+    width: 4.19em;
+  }
+}
+@media (max-width: 653px) {
+  .container {
+    column-gap: 0;
+  }
+}
+@media (max-width: 610px) {
+  .colors .first_row > div {
+    width: 20px;
+    height: 20px;
+  }
+  .colors .second_row > div {
+    width: 20px;
+    height: 20px;
+  }
+  .colors input {
+    width: 35px;
+    height: 35px;
+  }
+  .switch {
+    width: 45px;
+    height: 25px;
+  }
+  .slider:before {
+    height: 20px;
+    width: 20px;
+    left: 2.5px;
+    bottom: 3px;
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(26px);
+    transform: translateX(20px);
+  }
+  .slider i {
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 529px) {
+  .colors .first_row > div:nth-child(5) {
+    display: none;
+  }
+  .colors .second_row > div:nth-child(5) {
+    display: none;
+  }
+}
+@media (max-width: 499px) {
+  .colors .first_row > div:nth-child(4) {
+    display: none;
+  }
+  .colors .second_row > div:nth-child(4) {
+    display: none;
+  }
+}
+@media (max-width: 449px) {
+  .colors .first_row > div:nth-child(3) {
+    display: none;
+  }
+  .colors .second_row > div:nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 421px) {
+  .dropdown button:nth-child(1) {
+    padding: 7px 0px;
+    width: 4em;
+  }
+  .dropdown-menu.show {
+    width: 3.37em;
+  }
+  .dropdown-menu button:nth-child(1) {
+    font-size: 0.8em;
+    padding: 6px 4px;
+    border-radius: 5px;
+  }
+  .dropdown-menu button:nth-child(2) {
+    font-size: 0.8em;
+    padding: 6px 4px;
+    border-radius: 5px;
+  }
+  .dropdown-menu button:nth-child(3) {
+    font-size: 0.8em;
+    padding: 6px 4px;
+    border-radius: 5px;
+  }
+
+  .dropdown-toggle-2 {
+    padding: 7px 0px;
+    width: 4em;
+  }
+  .dropdown-menu-2.show {
+    width: 3.33em;
+  }
+
+  .container > div:nth-child(3) {
+    column-gap: 10px;
+  }
+  .colors .first_row {
+    display: none;
+  }
+  .colors .second_row {
+    display: none;
+  }
+}
+@media (max-width:365px) {
+    .brush {
+        height: 30px;
+        width: 30px;
+    }
+.container > div:nth-child(3) select {
+    padding: 4px 0px;
+}
+.container > div:nth-child(3) #textarea {
+    padding: 2px 4px;
+}
+
+}

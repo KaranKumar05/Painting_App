@@ -1,0 +1,274 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(to bottom, #000000, #e0dddd);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+  row-gap: 1em;
+}
+
+/* Container  */
+.container {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 2em;
+  justify-content: space-evenly;
+}
+
+/* Buttons  */
+.dropdown-toggle {
+  display: none;
+}
+.dropdown-menu {
+  display: flex;
+  column-gap: 2em;
+  flex-direction: row-reverse;
+}
+.dropdown button {
+  padding: 7px;
+  border: none;
+  box-shadow: 0px 0px 10px white;
+  border-radius: 10px;
+}
+.dropdown button:nth-child(1) {
+  background-color: rgb(149, 1, 1);
+  color: white;
+}
+.dropdown button:nth-child(1):hover {
+  background-color: rgb(223, 3, 3);
+  box-shadow: 0px 0px 20px white;
+}
+.dropdown button:nth-child(2) {
+  background-color: rgb(0, 0, 183);
+  color: white;
+}
+.dropdown button:nth-child(2):hover {
+  background-color: rgb(0, 0, 255);
+  box-shadow: 0px 0px 20px white;
+}
+.dropdown button:nth-child(3) {
+  background-color: green;
+  color: white;
+}
+.dropdown button:nth-child(3):hover {
+  background-color: rgb(3, 201, 3);
+  box-shadow: 0px 0px 20px white;
+}
+
+/* Shape Button dropdown  */
+.dropdown-2 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle-2 {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 10em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dropdown-menu-2 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+.dropdown-menu-2 button{
+    padding: 5px 10px;
+    border: none;
+    background-color: white;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+.dropdown-menu-2 button:hover{
+ background-color: black;
+}
+.dropdown-menu-2.show {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.7em;
+  opacity: 1;
+  width: 8.32em;
+  align-items: center;
+}
+
+/* Brush Button Thickness dropdown and text area  */
+.container > div:nth-child(3) {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.brush {
+  height: 35px;
+  width: 35px;
+  background-color: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+.container > div:nth-child(3) select {
+  padding: 6px 2px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 25px;
+  font-size: 1.2em;
+  border: 2px solid white;
+  background-color: rgba(77, 76, 76, 0.46);
+  color: white;
+}
+.container > div:nth-child(3) select option {
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.3em;
+}
+.container > div:nth-child(3) #textarea {
+  color: rgb(0, 0, 0);
+  border: 2px dotted rgb(0, 0, 0);
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: white;
+}
+
+/* Colors Section  */
+.colors {
+  display: flex;
+  column-gap: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+.colors > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.colors .first_row {
+  display: flex;
+  column-gap: 5px;
+}
+
+.colors .first_row > div {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.colors .second_row {
+  display: flex;
+  column-gap: 5px;
+}
+
+.colors .second_row > div {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.colors input {
+  width: 45px;
+  height: 45px;
+}
+
+/* Theme Button  */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d8d8d8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  /* background-color: #000000; */
+  background-color: #262626;
+}
+
+input:focus + .slider {
+  /* box-shadow: 0 0 1px #000000; */
+  background-color: #d8d8d8;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 14px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Adjust the position of the icons within the slider */
+.slider i {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Adjust the position of the moon icon */
+.slider i.bi-moon {
+  left: 25%;
+  color: white;
+}
+
+/* Adjust the position of the sun icon */
+.slider i.bi-sun {
+  color: white;
+  right: 0%;
+}
+/* canvas Styling  */
+#canvas{
+  height: 80%;
+  background-color: white;
+  width: 98%;
+  align-self: center;
+}
