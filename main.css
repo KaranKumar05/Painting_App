@@ -89,20 +89,20 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease-out;
 }
-.dropdown-menu-2>div {
+.dropdown-menu-2 > div {
   display: flex;
   column-gap: 5px;
 }
 
-.dropdown-menu-2 button{
-    padding: 5px 10px;
-    border: none;
-    background-color: white;
-    font-weight: bold;
-    border-bottom: 2px solid black;
+.dropdown-menu-2 button {
+  padding: 5px 10px;
+  border: none;
+  background-color: white;
+  font-weight: bold;
+  border-bottom: 2px solid black;
 }
-.dropdown-menu-2 button:hover{
- background-color: rgb(255, 255, 255);
+.dropdown-menu-2 button:hover {
+  background-color: rgb(255, 255, 255);
 }
 .dropdown-menu-2.show {
   display: flex;
@@ -197,92 +197,81 @@ body {
 }
 
 /* Theme Button  */
-.switch {
+.toggle-container {
   position: relative;
   display: inline-block;
-  width: 55px;
-  height: 30px;
+  width: 60px;
+  height: 34px;
 }
 
-.switch input {
+.toggle-input {
   display: none;
 }
 
-.slider {
+.toggle-label {
   position: absolute;
-  cursor: pointer;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #d8d8d8;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: #bababa;
+  border-radius: 34px;
+  transition: background-color 0.2s ease;
 }
 
-.slider:before {
-  position: absolute;
+.toggle-label:before {
   content: "";
-  height: 22px;
-  width: 22px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.2s ease;
 }
 
-input:checked + .slider {
-  /* background-color: #000000; */
-  background-color: #262626;
+.toggle-input:checked + .toggle-label {
+  background-color: #000000;
 }
 
-input:focus + .slider {
-  /* box-shadow: 0 0 1px #000000; */
-  background-color: #d8d8d8;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
+.toggle-input:checked + .toggle-label:before {
   transform: translateX(26px);
 }
 
-.slider.round {
-  border-radius: 14px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-/* Adjust the position of the icons within the slider */
-.slider i {
+.toggle-button {
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 3px;
+  left: 3px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
 }
 
-/* Adjust the position of the moon icon */
-.slider i.bi-moon {
-  left: 25%;
-  color: white;
+.toggle-input:checked + .toggle-label + .toggle-button {
+  transform: translateX(26px);
+  background-color: #ffffff;
 }
-
-/* Adjust the position of the sun icon */
-.slider i.bi-sun {
-  color: white;
-  right: 0%;
+.toggle-container i {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  font-size: 1.2rem;
+  color: #fff;
 }
 /* canvas Styling  */
-#canvas{
+#canvas {
   height: 83%;
   background-color: white;
   width: 98%;
   align-self: center;
 }
 /* active class  */
-.active{
-  background-color: #757575 !important; 
+.active {
+  background-color: #757575 !important;
   color: white;
 }

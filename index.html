@@ -90,17 +90,16 @@
           id="color_picker"
         />
       </div>
-      <div class="theme">
-        <label class="switch">
-          <input type="checkbox" />
-          <span class="slider round">
-            <i class="bi bi-moon"></i>
-            <i class="bi bi-sun"></i>
-          </span>
-        </label>
+      <div class="toggle-container">
+        <input type="checkbox" id="toggle" class="toggle-input" />
+        <label for="toggle" class="toggle-label"></label>
+        <div class="toggle-button"></div>
+        <i class="bi bi-moon"></i>
+        <i class="bi bi-sun"></i>
       </div>
     </div>
     <canvas id="canvas"></canvas>
     <script src="./main.js"></script>
+    <script src="./theme.js"></script>
   </body>
 </html>

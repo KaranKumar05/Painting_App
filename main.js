@@ -46,7 +46,19 @@ function undo_last() {
     context.putImageData(undo_array[index], 0, 0)
   }
 }
+// Eraser Button 
+const eraserButton = document.getElementById("eraser");
+let isErasing = false;
 
+eraserButton.addEventListener("click", toggleEraserMode);
+function toggleEraserMode() {
+  isErasing = !isErasing;
+  if (isErasing) {
+    context.strokeStyle = "#FFFFFF"; // white color for erasing
+  } else {
+    context.strokeStyle = "#000000"; // black color for drawing
+  }
+}
 // Shapes button dropdown
 let dropdownToggle_2 = document.querySelector(".dropdown-toggle-2");
 let dropdownMenu_2 = document.querySelector(".dropdown-menu-2");
@@ -102,6 +114,15 @@ function start(event) {
   context.beginPath();
   context.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop)
   event.preventDefault();
+
+  // Eraser Button 
+  if (isErasing) {
+    // Start erasing
+    context.globalCompositeOperation = "destination-out";
+  } else {
+    // Start drawing
+    context.globalCompositeOperation = "source-over";
+  }
 }
 
 function draw(event) {
@@ -113,6 +134,10 @@ function draw(event) {
     context.lineJoin = "Round";
     context.stroke();
   }
+
+  // Eraser Button 
+  if (e.buttons !== 1) return;
+
   event.preventDefault();
 }
 function stop(event) {
@@ -121,6 +146,10 @@ function stop(event) {
     context.closePath();
     drawing = false;
   }
+
+  // Eraser  button 
+  context.closePath();
+
   event.preventDefault();
 
   // Undo button js for mouse 
@@ -139,6 +168,15 @@ function start_touch(event) {
   let touch = event.touches[0];
   context.beginPath();
   context.moveTo(touch.pageX - canvas.offsetLeft, touch.pageY - canvas.offsetTop)
+
+  // Eraser Button 
+  if (isErasing) {
+    // Start erasing
+    context.globalCompositeOperation = "destination-out";
+  } else {
+    // Start drawing
+    context.globalCompositeOperation = "source-over";
+  }
   event.preventDefault();
 }
 
@@ -152,6 +190,10 @@ function draw_touch(event) {
     context.lineJoin = "Round";
     context.stroke();
   }
+
+  // Eraser Button 
+  if (e.buttons !== 1) return;
+
   event.preventDefault();
 }
 
@@ -171,6 +213,10 @@ function stop(event) {
     undo_array.push(context.getImageData(0, 0, canvas.width, canvas.height));
     index += 1;
   }
+
+  // Eraser  button 
+  context.closePath();
+
 }
 
 
@@ -187,4 +233,19 @@ toolBtn.forEach(btn => {
   })
 });
 
+
+// Theme Button
+// let toggle = document.getElementById("toggle");
+// let body = document.querySelector("body");
+// // let button = document.button;
+
+// toggle.addEventListener("change", (e) => {
+//   if (e.target.checked) {
+//     body.classList.add("dark-mode");
+//     body.style.cssText = "transition: .5s; background-color: Black;";
+//   } else {
+//     body.classList.remove("dark-mode");
+//     body.style.cssText = "transition: .5s; background-color: white;";
+//   }
+// });
 
